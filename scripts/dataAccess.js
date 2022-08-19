@@ -1,0 +1,9 @@
+const applicationState = {}
+
+export const getApplicationState = () => {
+    return structuredClone(applicationState)
+}
+
+export const setParks = (parks) => {
+    applicationState.parks = parks
+}
