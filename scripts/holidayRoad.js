@@ -17,7 +17,7 @@ export const holidayRoad = (state) => {
         </article>
     </section>
     <section id="itinerary">
-        ${}
+        
     </section>
     `
 }
