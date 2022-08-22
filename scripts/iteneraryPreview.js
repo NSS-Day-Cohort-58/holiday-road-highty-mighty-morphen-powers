@@ -1,8 +1,8 @@
 
 export const iteneraryPreview = (state) => {
-    let foundPark = state.parks.find(park => {return park.id === state.selectedPark.id})
-    let foundEatery = state.eateries.find(eatery => {return eatery.id === state.selectedEatery.id})
-    let foundBiz = state.bizarreries.find(biz => {return biz.id === state.selectedBiz.id})
+    let foundPark = state.parks.find(park => {return park.id === state.selectedParkId})
+    let foundEatery = state.eateries.find(eatery => {return eatery.id === state.selectedEateryId})
+    let foundBiz = state.bizarreries.find(biz => {return biz.id === state.selectedBizId})
     return `<div><h2>Itenerary Preview:</h2></div>
             <div class="parkPreview">
             <h3>${foundPark.fullName}</h3>
