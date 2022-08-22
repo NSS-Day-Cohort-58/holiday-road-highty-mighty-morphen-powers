@@ -16,3 +16,11 @@ export const setAttractions = (attractions) => {
 export const setEateries = (eateries) => {
     applicationState.eateries = eateries
 }
+
+
+
+
+
+export const setPark = (selectedParkId) => {
+    applicationState.selectedParkId = selectedParkId
+}
