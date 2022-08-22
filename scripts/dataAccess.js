@@ -8,15 +8,15 @@ export const setParks = (parks) => {
     applicationState.parks = parks
 }
 
-<<<<<<< HEAD
+
 
 
 
 
 export const setAttractions = (attractions) => {
     applicationState.attractions = attractions
-=======
+}
+
 export const setEateries = (eateries) => {
     applicationState.eateries = eateries
->>>>>>> main
 }
