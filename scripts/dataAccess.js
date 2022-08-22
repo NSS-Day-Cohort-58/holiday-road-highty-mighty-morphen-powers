@@ -9,10 +9,6 @@ export const setParks = (parks) => {
 }
 
 
-
-
-
-
 export const setAttractions = (attractions) => {
     applicationState.attractions = attractions
 }
