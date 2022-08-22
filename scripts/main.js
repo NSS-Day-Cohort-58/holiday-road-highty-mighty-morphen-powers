@@ -1,11 +1,18 @@
+import { fetchAttractions } from "./attractions/AttractionProvider.js"
 import { getApplicationState } from "./dataAccess.js"
+import { fetchEateries } from "./eateries/EateryProvider.js"
 import { holidayRoad } from "./holidayRoad.js"
 import { fetchParks } from "./parks/ParkProvider.js"
 
 const mainContainer = document.querySelector("#container")
 
 const render = () => {
-    fetchParks()
+    fetchParks().then(
+        () =>  fetchAttractions()
+    )
+    .then(
+        () => fetchEateries()
+    )
     .then(
         () => {
             let state = getApplicationState()
