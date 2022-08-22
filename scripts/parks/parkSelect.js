@@ -1,4 +1,4 @@
-import { setPark } from "../dataAccess"
+import { setPark } from "../dataAccess.js"
 
 export const parkSelect = (parks) => {
     return `<select id="parkSelect"><option value=0>Choose Park</option>
