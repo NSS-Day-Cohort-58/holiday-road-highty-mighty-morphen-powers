@@ -16,7 +16,10 @@ export const setAttractions = (attractions) => {
 export const setEateries = (eateries) => {
     applicationState.eateries = eateries
 }
-
 export const setEatery = (selectedEateryId) => {
     applicationState.selectedEateryId = selectedEateryId
+}
+
+export const setPark = (selectedParkId) => {
+    applicationState.selectedParkId = selectedParkId
 }
