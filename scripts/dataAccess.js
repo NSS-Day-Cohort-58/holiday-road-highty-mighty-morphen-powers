@@ -7,3 +7,11 @@ export const getApplicationState = () => {
 export const setParks = (parks) => {
     applicationState.parks = parks
 }
+
+
+
+
+
+export const setAttractions = (attractions) => {
+    applicationState.attractions = attractions
+}
