@@ -1,4 +1,5 @@
 import { setPark } from "../dataAccess.js"
+import { fetchWeather } from "../weather/WeatherProvider.js"
 
 export const parkSelect = (state) => {
     return `<select id="parkSelect"><option value="">Choose Park</option>
@@ -9,7 +10,8 @@ document.addEventListener(
     "change",
     event => {
         if (event.target.id === "parkSelect") {
-            setPark((event.target.value))
+            setPark(event.target.value)
+            fetchWeather()
         }
     }
 )

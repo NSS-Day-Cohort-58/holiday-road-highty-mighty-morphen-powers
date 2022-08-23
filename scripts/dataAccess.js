@@ -28,6 +28,7 @@ export const setEatery = (selectedEateryId) => {
 export const setPark = (selectedParkId) => {
     applicationState.selectedParkId = selectedParkId
     applicationState.weather = []
+    // mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
 }
 export const setAttraction = (selectedAttractionId) => {
     applicationState.selectedAttractionId = selectedAttractionId
