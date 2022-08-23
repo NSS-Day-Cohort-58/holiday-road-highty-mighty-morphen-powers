@@ -27,9 +27,18 @@ export const setEatery = (selectedEateryId) => {
 
 export const setPark = (selectedParkId) => {
     applicationState.selectedParkId = selectedParkId
-    mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+    applicationState.weather = []
+    // mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
 }
 export const setAttraction = (selectedAttractionId) => {
     applicationState.selectedAttractionId = selectedAttractionId
+    mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+}
+export const setWeather= (weatherObj) => {
+    let filteredWeather = []
+    for (let i=0; i < weatherObj.list.length; i+=8) {
+        filteredWeather.push(weatherObj.list[i])
+    }
+    applicationState.weather = filteredWeather
     mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
 }

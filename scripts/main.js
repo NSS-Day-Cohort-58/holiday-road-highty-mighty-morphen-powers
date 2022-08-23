@@ -6,7 +6,7 @@ import { fetchParks } from "./parks/ParkProvider.js"
 
 const mainContainer = document.querySelector("#container")
 
-const render = () => {
+const renderAPIs = () => {
     fetchParks().then(
         () =>  fetchAttractions()
     )
@@ -21,15 +21,21 @@ const render = () => {
     )
 }
 
+const renderState = () => {
+    let state = getApplicationState()
+    mainContainer.innerHTML = holidayRoad(state)
+}
+
+renderAPIs()
+
 //custom event to re-render html on state change
 mainContainer.addEventListener(
     "stateChanged",
     customEvent => {
-        render()
+        renderState()
     }
 )
 
-render()
 
 
 

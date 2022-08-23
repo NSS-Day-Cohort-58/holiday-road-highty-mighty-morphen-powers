@@ -2,6 +2,7 @@ import { parkSelect } from "./parks/parkSelect.js"
 import { attractionSelect } from "./attractions/attractionSelect.js"
 import { eaterySelect } from "./eateries/eaterySelect.js"
 import { iteneraryPreview } from "./iteneraryPreview.js"
+import { weatherPreview } from "./weather/weatherPreview.js"
 
 export const holidayRoad = (state) => {
     return `
@@ -19,7 +20,9 @@ export const holidayRoad = (state) => {
     </section>
     <section id="itinerary">
      ${iteneraryPreview(state)}
-        
+        <aside>
+            ${weatherPreview(state)}
+        </aside>
     </section>
     `
 }
