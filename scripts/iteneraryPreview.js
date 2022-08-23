@@ -1,3 +1,6 @@
+import { attractionDetails } from "./attractions/attractionDetails.js"
+import { getApplicationState } from "./dataAccess.js"
+import { eateryDetails } from "./eateries/eateryDetails.js"
 
 export const iteneraryPreview = (state) => {
 
@@ -32,6 +35,36 @@ export const iteneraryPreview = (state) => {
             </div>
             <div class="parkPreview">
             <h3>${bizHeading}</h3>
-            <button type= "button" id="parkDetails" ${state.selectedAttractionId ? "" : "class = 'hidden'"}>Details</button>
+            <button type= "button" id="attractionDetails" ${state.selectedAttractionId ? "" : "class = 'hidden'"}>Details</button>
             </div>`
 } 
+
+
+
+
+
+const mainContainer = document.querySelector("#container")
+
+mainContainer.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === "attractionDetails") {  
+        let state = getApplicationState()
+        attractionDetails(state)
+        mainContainer.dispatchEvent( new CustomEvent("stateChanged"))
+    }
+})
+
+mainContainer.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === "eateryDetails") {  
+        let state = getApplicationState()
+        eateryDetails(state)
+        mainContainer.dispatchEvent( new CustomEvent("stateChanged"))
+    }
+})
+
+mainContainer.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === "parkDetails") {  
+        let state = getApplicationState()
+        eateryDetails(state)
+        mainContainer.dispatchEvent( new CustomEvent("stateChanged"))
+    }
+})
