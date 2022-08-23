@@ -1,8 +1,8 @@
 import { setEatery } from "../dataAccess.js"
 
-export const eaterySelect = (eateries) => {
+export const eaterySelect = (state) => {
     return `<select id="eaterySelect"><option value=0>Choose Eatery</option>
-        ${eateries.map(eatery => {return `<option value="${eatery.id}" id="eatery--${eatery.id}">${eatery.businessName}</option>`}).join("")}</select>`
+        ${state.eateries.map(eatery => {return `<option value="${eatery.id}" id="eatery--${eatery.id}" ${eatery.id === state.selectedEateryId ? "selected" : "" }>${eatery.businessName}</option>`}).join("")}</select>`
 }
 
 document.addEventListener(

@@ -1,15 +1,15 @@
 import { setPark } from "../dataAccess.js"
 
-export const parkSelect = (parks) => {
-    return `<select id="parkSelect"><option value=0>Choose Park</option>
-        ${parks.data.map(park => { return `<option value="${park.id}" id="park--${park.id}">${park.fullName}</option>` }).join("")}</select>`
+export const parkSelect = (state) => {
+    return `<select id="parkSelect"><option value="">Choose Park</option>
+        ${state.parks.data.map(park => { return `<option value="${park.id}" id="park--${park.id}"${park.id === state.selectedParkId ? "selected" : "" }>${park.fullName}</option>` }).join("")}</select>`
 }
 
 document.addEventListener(
     "change",
     event => {
         if (event.target.id === "parkSelect") {
-            setPark(parseInt(event.target.value))
+            setPark((event.target.value))
         }
     }
 )
