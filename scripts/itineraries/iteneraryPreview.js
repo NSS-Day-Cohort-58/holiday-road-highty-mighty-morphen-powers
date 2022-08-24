@@ -1,3 +1,5 @@
+import { attractionDetails } from "../attractions/attractionDetails.js"
+import { eateryDetails } from "../eateries/eateryDetails.js"
 import { clearSelections, getApplicationState } from "../dataAccess.js"
 import { sendItinerary } from "./itineraryProvider.js"
 
@@ -21,7 +23,7 @@ export const iteneraryPreview = (state) => {
         let foundBiz = state.attractions.find(biz => { return biz.id === state.selectedAttractionId })
         bizHeading = foundBiz.name
     }
-
+    
 
     return `<div><h2>Itenerary Preview:</h2></div>
             <div class="parkPreview">
@@ -34,10 +36,42 @@ export const iteneraryPreview = (state) => {
             </div>
             <div class="parkPreview">
             <h3>${bizHeading}</h3>
-            <button type= "button" id="parkDetails" ${state.selectedAttractionId ? "" : "class = 'hidden'"}>Details</button>
+            <button type= "button" id="attractionDetails" ${state.selectedAttractionId ? "" : "class = 'hidden'"}>Details</button>
             <button type="button" id="submitItinerary" ${state.selectedAttractionId && state.selectedEateryId && state.selectedParkId ? "" : "disabled"}>Submit Itinerary</button>
             </div>`
 } 
+ 
+
+
+
+
+
+const mainContainer = document.querySelector("#container")
+
+mainContainer.addEventListener("click", clickEvent => {
+    let state = getApplicationState()
+    if (clickEvent.target.id === "attractionDetails") {  
+        attractionDetails(state)
+        //mainContainer.dispatchEvent( new CustomEvent("stateChanged"))
+    }
+})
+
+mainContainer.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === "eateryDetails") {  
+        let state = getApplicationState()
+        eateryDetails(state)
+       // mainContainer.dispatchEvent( new CustomEvent("stateChanged"))
+    }
+})
+
+mainContainer.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === "parkDetails") {  
+        let state = getApplicationState()
+        eateryDetails(state)
+        //mainContainer.dispatchEvent( new CustomEvent("stateChanged"))
+    }
+})
+            
 
 document.addEventListener(
     "click",
