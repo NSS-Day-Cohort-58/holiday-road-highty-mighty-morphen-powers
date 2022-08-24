@@ -4,14 +4,16 @@ import { fetchWeather } from "./WeatherProvider.js"
 
 export const weatherPreview = (state) => {
     let html = ""
+    
     if (state.selectedParkId) {
+         html +="<h3>5 Day Weather Preview</h3>"
         const foundPark = state.parks.data.find(park => park.id === state.selectedParkId)
         const applicationState = getApplicationState()
         const listArray = applicationState.weather.map(weather => {
             const convertedTemp = (1.8*(weather.main.temp-273)) + 32
             const covertFeelsLike = (1.8*(weather.main.feels_like-273)) + 32
             const date = new Date(weather.dt_txt)
-            return `<h3>5 Day Weather Preview</h3>
+            return `
             <ul><h4>${date}</h4>
             <li>Temputure: ${Math.round(convertedTemp)} F</li>
             <li>Feels like: ${Math.round(covertFeelsLike)}</li>

@@ -11,7 +11,7 @@ import { itineraryDisplay } from "./itineraries/itineraryList.js"
 
 export const holidayRoad = (state) => {
     return `
-    <h1>Holiday Road</h1>
+    
     <div id="body1">
     <section id="options">
         <article id="options--parks">
@@ -38,10 +38,10 @@ export const holidayRoad = (state) => {
    
         <aside>
         
-        <section id="weatherSection"
+        
             
             ${weatherPreview(state)}
-            </section>  
+            
         </aside>
         
     </div>

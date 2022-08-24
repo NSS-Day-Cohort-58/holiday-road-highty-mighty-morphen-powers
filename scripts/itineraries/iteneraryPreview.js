@@ -37,8 +37,9 @@ export const iteneraryPreview = (state) => {
             <div class="parkPreview">
             <h3>${bizHeading}</h3>
             <button type= "button" id="attractionDetails" ${state.selectedAttractionId ? "" : "class = 'hidden'"}>Details</button>
-            <button type="button" id="submitItinerary" ${state.selectedAttractionId && state.selectedEateryId && state.selectedParkId ? "" : "disabled"}>Submit Itinerary</button>
-            </div>`
+            
+            </div>
+            <button type="button" id="submitItinerary" ${state.selectedAttractionId && state.selectedEateryId && state.selectedParkId ? "" : "disabled"}>Submit Itinerary</button>`
 } 
  
 

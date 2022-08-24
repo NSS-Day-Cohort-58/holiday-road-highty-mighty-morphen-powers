@@ -3,7 +3,7 @@
 
 export const attractionDetails = (state) => {
    
-    let html = "<h4>Attraction Details</h4>"
+    let html = ""
     if (state.selectedAttractionId && state.attractionDetailsClicked === true) { //if an attraction from the dropdown has been selected AND DETAIL BUTTON CLICKED
 
         const foundAttraction = state.attractions.find(
