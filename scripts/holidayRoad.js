@@ -7,8 +7,10 @@ import { weatherPreview } from "./weather/weatherPreview.js"
 export const holidayRoad = (state) => {
     return `
     <h1>Holiday Road</h1>
+    <div id="body">
     <section id="options">
         <article id="options--parks">
+        <h2>Choose Your Trip</h2>
             ${parkSelect(state)}
         </article>
         <article id="options--attractions">
@@ -20,9 +22,14 @@ export const holidayRoad = (state) => {
     </section>
     <section id="itinerary">
      ${iteneraryPreview(state)}
-        <aside>
-            ${weatherPreview(state)}
-        </aside>
+        
     </section>
+        </div>
+        <aside>
+        <h3>5 Day Weather Preview</h3>
+        
+            ${weatherPreview(state)}
+            
+        </aside>
     `
 }
