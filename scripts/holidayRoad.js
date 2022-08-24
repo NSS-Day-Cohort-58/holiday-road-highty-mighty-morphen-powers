@@ -12,7 +12,7 @@ import { itineraryDisplay } from "./itineraries/itineraryList.js"
 export const holidayRoad = (state) => {
     return `
     <h1>Holiday Road</h1>
-    <div id="body">
+    <div id="body1">
     <section id="options">
         <article id="options--parks">
         <h2>Choose Your Trip</h2>
@@ -29,23 +29,29 @@ export const holidayRoad = (state) => {
      ${iteneraryPreview(state)}
         
     </section>
-        </div>
-        <section>
-        <aside>
-        <h3>5 Day Weather Preview</h3>
-        
-            ${weatherPreview(state)}
-            
-        </aside>
-
-    </section>
-    
     <section id="details">
-        ${attractionDetails(state)}
-        ${eateryDetails(state)}
         ${parkDetails(state)}
+        ${eateryDetails(state)}
+        ${attractionDetails(state)}
+           
     </section>
+   
+        <aside>
+        
+        <section id="weatherSection"
+            
+            ${weatherPreview(state)}
+            </section>  
+        </aside>
+        
+    </div>
+
+    <div id="body2">
+     <section id="itinDis"> 
     ${itineraryDisplay(state)}
+    </section>
+    </div>
+    
 
     `
 }

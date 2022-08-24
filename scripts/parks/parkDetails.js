@@ -2,7 +2,7 @@
 
 
 export const parkDetails = (state) => {
-    let html = "<h4>Park Details</h4>"
+    let html = ""
     if (state.selectedParkId) { //if a park from the dropdown has been selected AND DETAILS BUTTON CLICKED
         const foundPark = state.parks.data.find(
             (park) => {
@@ -10,7 +10,7 @@ export const parkDetails = (state) => {
             }
         )
     
-    html += `<div>${foundPark.description}</div>`
+    html += `<h4>Park Details</h4><div>${foundPark.description}</div>`
     }
     return html
 }

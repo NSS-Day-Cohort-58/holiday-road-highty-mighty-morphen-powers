@@ -2,7 +2,7 @@
 
 
 export const eateryDetails = (state) => {
-    let html = "<h4>Eatery Details</h4>"
+    let html = ""
     if (state.selectedEateryId) { //if an eatery from the dropdown has been selected AND DETAIL BUTTON CLICKED
         const foundEatery = state.eateries.find(
             (eatery) => {
@@ -10,7 +10,7 @@ export const eateryDetails = (state) => {
             }
         )
     
-    html += `<div>${foundEatery.description}</div>`
+    html += `<h4>Eatery Details</h4><div>${foundEatery.description}</div>`
     }
     return html
 }
