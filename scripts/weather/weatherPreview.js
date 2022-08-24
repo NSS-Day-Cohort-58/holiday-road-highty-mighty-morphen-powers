@@ -11,7 +11,7 @@ export const weatherPreview = (state) => {
             const convertedTemp = (1.8*(weather.main.temp-273)) + 32
             const covertFeelsLike = (1.8*(weather.main.feels_like-273)) + 32
             const date = new Date(weather.dt_txt)
-            return `
+            return `<h3>5 Day Weather Preview</h3>
             <ul><h4>${date}</h4>
             <li>Temputure: ${Math.round(convertedTemp)} F</li>
             <li>Feels like: ${Math.round(covertFeelsLike)}</li>
