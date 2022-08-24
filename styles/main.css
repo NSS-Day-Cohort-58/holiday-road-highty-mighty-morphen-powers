@@ -1,3 +1,29 @@
 button.hidden{
     display: none;
 }
+aside{
+    display:flex;
+    justify-content: center;
+    flex-direction: row;
+    text-align: center;   
+    flex-wrap: wrap; 
+    min-width: 300px;
+    max-width: 300px;
+}
+
+#body{
+    display: flex;
+    flex-direction: row;
+}
+h1{
+    text-align: center;
+}
+h2{
+    text-align: center;
+}
+h3{
+    text-align: center;
+}
+ul{
+    list-style-type: none;
+}
