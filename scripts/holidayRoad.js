@@ -27,6 +27,7 @@ export const holidayRoad = (state) => {
             ${weatherPreview(state)}
         </aside>
     </section>
+    
     <section id="details">
         ${attractionDetails(state)}
         ${eateryDetails(state)}
@@ -34,6 +35,4 @@ export const holidayRoad = (state) => {
     </section>
     `
 }
-
-
 

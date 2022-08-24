@@ -22,7 +22,7 @@ export const iteneraryPreview = (state) => {
         let foundBiz = state.attractions.find(biz => { return biz.id === state.selectedAttractionId })
         bizHeading = foundBiz.name
     }
-
+    
 
     return `<div><h2>Itenerary Preview:</h2></div>
             <div class="parkPreview">
@@ -46,10 +46,10 @@ export const iteneraryPreview = (state) => {
 const mainContainer = document.querySelector("#container")
 
 mainContainer.addEventListener("click", clickEvent => {
+    let state = getApplicationState()
     if (clickEvent.target.id === "attractionDetails") {  
-        let state = getApplicationState()
         attractionDetails(state)
-        mainContainer.dispatchEvent( new CustomEvent("stateChanged"))
+        //mainContainer.dispatchEvent( new CustomEvent("stateChanged"))
     }
 })
 
@@ -57,7 +57,7 @@ mainContainer.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "eateryDetails") {  
         let state = getApplicationState()
         eateryDetails(state)
-        mainContainer.dispatchEvent( new CustomEvent("stateChanged"))
+       // mainContainer.dispatchEvent( new CustomEvent("stateChanged"))
     }
 })
 
@@ -65,6 +65,6 @@ mainContainer.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "parkDetails") {  
         let state = getApplicationState()
         eateryDetails(state)
-        mainContainer.dispatchEvent( new CustomEvent("stateChanged"))
+        //mainContainer.dispatchEvent( new CustomEvent("stateChanged"))
     }
 })
