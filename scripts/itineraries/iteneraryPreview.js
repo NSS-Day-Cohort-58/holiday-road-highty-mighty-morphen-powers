@@ -1,11 +1,7 @@
-<<<<<<< HEAD:scripts/iteneraryPreview.js
-import { attractionDetails } from "./attractions/attractionDetails.js"
-import { getApplicationState } from "./dataAccess.js"
-import { eateryDetails } from "./eateries/eateryDetails.js"
-=======
+import { attractionDetails } from "../attractions/attractionDetails.js"
+import { eateryDetails } from "../eateries/eateryDetails.js"
 import { clearSelections, getApplicationState } from "../dataAccess.js"
 import { sendItinerary } from "./itineraryProvider.js"
->>>>>>> main:scripts/itineraries/iteneraryPreview.js
 
 export const iteneraryPreview = (state) => {
 
@@ -40,10 +36,11 @@ export const iteneraryPreview = (state) => {
             </div>
             <div class="parkPreview">
             <h3>${bizHeading}</h3>
-<<<<<<< HEAD:scripts/iteneraryPreview.js
             <button type= "button" id="attractionDetails" ${state.selectedAttractionId ? "" : "class = 'hidden'"}>Details</button>
+            <button type="button" id="submitItinerary" ${state.selectedAttractionId && state.selectedEateryId && state.selectedParkId ? "" : "disabled"}>Submit Itinerary</button>
             </div>`
 } 
+ 
 
 
 
@@ -74,11 +71,7 @@ mainContainer.addEventListener("click", clickEvent => {
         //mainContainer.dispatchEvent( new CustomEvent("stateChanged"))
     }
 })
-=======
-            <button type= "button" id="parkDetails" ${state.selectedAttractionId ? "" : "class = 'hidden'"}>Details</button>
-            <button type="button" id="submitItinerary" ${state.selectedAttractionId && state.selectedEateryId && state.selectedParkId ? "" : "disabled"}>Submit Itinerary</button>
-            </div>`
-} 
+            
 
 document.addEventListener(
     "click",
@@ -95,4 +88,3 @@ document.addEventListener(
         }
     }
 )
->>>>>>> main:scripts/itineraries/iteneraryPreview.js
