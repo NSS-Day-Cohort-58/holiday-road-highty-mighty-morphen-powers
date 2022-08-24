@@ -1,8 +1,13 @@
 import { parkSelect } from "./parks/parkSelect.js"
 import { attractionSelect } from "./attractions/attractionSelect.js"
 import { eaterySelect } from "./eateries/eaterySelect.js"
-import { iteneraryPreview } from "./iteneraryPreview.js"
+import { iteneraryPreview } from "./itineraries/iteneraryPreview.js"
 import { weatherPreview } from "./weather/weatherPreview.js"
+import {attractionDetails } from "./attractions/attractionDetails.js"
+import { eateryDetails } from "./eateries/eateryDetails.js"
+import { parkDetails } from "./parks/parkDetails.js"
+import { itineraryDisplay } from "./itineraries/itineraryList.js"
+
 
 export const holidayRoad = (state) => {
     return `
@@ -25,11 +30,23 @@ export const holidayRoad = (state) => {
         
     </section>
         </div>
+        <section>
         <aside>
         <h3>5 Day Weather Preview</h3>
         
             ${weatherPreview(state)}
             
         </aside>
+
+    </section>
+    
+    <section id="details">
+        ${attractionDetails(state)}
+        ${eateryDetails(state)}
+        ${parkDetails(state)}
+    </section>
+    ${itineraryDisplay(state)}
+
     `
 }
+

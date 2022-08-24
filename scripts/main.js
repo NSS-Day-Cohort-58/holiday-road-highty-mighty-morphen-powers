@@ -3,16 +3,14 @@ import { getApplicationState } from "./dataAccess.js"
 import { fetchEateries } from "./eateries/EateryProvider.js"
 import { holidayRoad } from "./holidayRoad.js"
 import { fetchParks } from "./parks/ParkProvider.js"
+import { fetchItineraries } from "./itineraries/itineraryProvider.js"
 
 const mainContainer = document.querySelector("#container")
 
 const renderAPIs = () => {
-    fetchParks().then(
-        () =>  fetchAttractions()
-    )
-    .then(
-        () => fetchEateries()
-    )
+    fetchParks().then(() =>  fetchAttractions())
+    .then(() => fetchEateries())
+    .then(() => fetchItineraries())
     .then(
         () => {
             let state = getApplicationState()
@@ -22,8 +20,10 @@ const renderAPIs = () => {
 }
 
 const renderState = () => {
-    let state = getApplicationState()
-    mainContainer.innerHTML = holidayRoad(state)
+    fetchItineraries().then(() => {    
+        let state = getApplicationState()
+        mainContainer.innerHTML = holidayRoad(state)
+    })
 }
 
 renderAPIs()
