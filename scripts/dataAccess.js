@@ -24,26 +24,44 @@ export const setEateries = (eateries) => {
 export const setItineraries = (itineraries) => {
     applicationState.itineraries = itineraries
 }
+export const setParkDetailsClicked = () => {
+    applicationState.parkDetailsClicked = true
+    mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+}
+export const setAttractionDetailsClicked = () => {
+    applicationState.attractionDetailsClicked = true
+    mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+}
+export const setEateryDetailsClicked = () => {
+    applicationState.eateryDetailsClicked = true
+    mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+}
 
 export const clearSelections = () => {
     applicationState.selectedAttractionId = ""
     applicationState.selectedEateryId = ""
     applicationState.selectedParkId = ""
+    applicationState.attractionDetailsClicked = false
+    applicationState.eateryDetailsClicked = false
+    applicationState.parkDetailsClicked = false
 }
 
 
 export const setEatery = (selectedEateryId) => {
     applicationState.selectedEateryId = selectedEateryId
+    applicationState.eateryDetailsClicked = false
     mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
 }
 
 export const setPark = (selectedParkId) => {
     applicationState.selectedParkId = selectedParkId
     applicationState.weather = []
+    applicationState.parkDetailsClicked = false
     // mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
 }
 export const setAttraction = (selectedAttractionId) => {
     applicationState.selectedAttractionId = selectedAttractionId
+    applicationState.attractionDetailsClicked = false
     mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
 }
 export const setWeather= (weatherObj) => {

@@ -1,6 +1,6 @@
 import { attractionDetails } from "../attractions/attractionDetails.js"
 import { eateryDetails } from "../eateries/eateryDetails.js"
-import { clearSelections, getApplicationState } from "../dataAccess.js"
+import { clearSelections, getApplicationState, setAttractionDetailsClicked, setEateryDetailsClicked, setParkDetailsClicked } from "../dataAccess.js"
 import { sendItinerary } from "./itineraryProvider.js"
 
 export const iteneraryPreview = (state) => {
@@ -51,7 +51,7 @@ const mainContainer = document.querySelector("#container")
 mainContainer.addEventListener("click", clickEvent => {
     let state = getApplicationState()
     if (clickEvent.target.id === "attractionDetails") {  
-        attractionDetails(state)
+        setAttractionDetailsClicked()
         //mainContainer.dispatchEvent( new CustomEvent("stateChanged"))
     }
 })
@@ -59,7 +59,7 @@ mainContainer.addEventListener("click", clickEvent => {
 mainContainer.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "eateryDetails") {  
         let state = getApplicationState()
-        eateryDetails(state)
+        setEateryDetailsClicked()
        // mainContainer.dispatchEvent( new CustomEvent("stateChanged"))
     }
 })
@@ -67,7 +67,7 @@ mainContainer.addEventListener("click", clickEvent => {
 mainContainer.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "parkDetails") {  
         let state = getApplicationState()
-        eateryDetails(state)
+        setParkDetailsClicked()
         //mainContainer.dispatchEvent( new CustomEvent("stateChanged"))
     }
 })
