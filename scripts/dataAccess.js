@@ -20,6 +20,18 @@ export const setEateries = (eateries) => {
     applicationState.eateries = eateries
     
 }
+
+export const setItineraries = (itineraries) => {
+    applicationState.itineraries = itineraries
+}
+
+export const clearSelections = () => {
+    applicationState.selectedAttractionId = ""
+    applicationState.selectedEateryId = ""
+    applicationState.selectedParkId = ""
+}
+
+
 export const setEatery = (selectedEateryId) => {
     applicationState.selectedEateryId = selectedEateryId
     mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
@@ -42,3 +54,4 @@ export const setWeather= (weatherObj) => {
     applicationState.weather = filteredWeather
     mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
 }
+
