@@ -1,21 +1,33 @@
 button.hidden{
     display: none;
 }
+#container{
+    display: flex;
+    flex-direction: row;
+}
+#itinerary{
+    display: flex;
+    
+    flex-direction: column;
+    justify-content: center;
+}
 aside{
     display:flex;
     justify-content: center;
     flex-direction: row;
     text-align: center;   
     flex-wrap: wrap; 
+    flex-basis: 24%;
+    margin: 0 2rem;
+	border: 1px solid black;
+	padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0.25rem 0.25rem 0.5rem rgb(143, 143, 143);
     
-    border: 1px solid blue;
+    
 }
 
-#body{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-}
+
 h1{
     text-align: center;
 }
@@ -29,7 +41,7 @@ ul{
     list-style-type: none;
 }
 
-#itinDis{
+/* #itinDis{
     border: 1px solid red;
     display: flex;
     flex-wrap: wrap;
@@ -52,4 +64,34 @@ ul{
     max-width: 80%;
     min-height: 300px;
     max-height: 300px;
+} */
+
+#body1{
+    max-width: 75%;
+    min-width: 75%;
+}
+#body2{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+#itinArt{
+    flex-basis: 24%;
+    margin: 0 2rem;
+	border: 1px solid black;
+	padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0.25rem 0.25rem 0.5rem rgb(143, 143, 143);
+}
+.parkPreview{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+   
+    align-items: center;
+}
+#submitItinerary{
+    max-width: 400px ;
+    min-width: 400px;
+    align-self: center;
 }
